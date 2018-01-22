@@ -7,6 +7,7 @@
 //
 
 #import "ContactList.h"
+@class Contact;
 
 @implementation ContactList
 
@@ -19,6 +20,26 @@
         
     }
     return self;
+}
+
+- (void) showContactList {
+    
+    if ([self.contactArray count] >= 1){
+        
+        for (Contact *contact in self.contactArray) {
+            
+            NSLog(@"Contact name: %@", contact.name);
+            NSLog (@"Contact email: %@", contact.email);
+        }
+    } else {
+        
+        NSLog(@"No contacts in list");
+    }
+}
+
+- (void)addContact:(Contact *)newContact {
+    
+    [self.contactArray addObject:newContact];
 }
 
 @end

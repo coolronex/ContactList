@@ -13,5 +13,7 @@
 
 @property (nonatomic, strong) NSMutableArray *contactArray;
 
+- (void) showContactList;
+- (void) addContact: (Contact *)newContact;
 
 @end
